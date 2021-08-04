@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var displayLabel: UILabel!
     private var isFinishedTypingNumber = true
+    private var calculatorLogic = CalculatorLogic()
     
     //Computed property
     private var displayValue: Double {
@@ -34,10 +35,10 @@ class ViewController: UIViewController {
     @IBAction func symbolButtonPressed(_ sender: UIButton) {
         
         isFinishedTypingNumber = true
-        let calculatorModel = CalculatorLogic(number: displayValue)
+        calculatorLogic.setNumber(displayValue)
         
         if let calcMethod = sender.currentTitle {
-            guard let result = calculatorModel.calculate(symbol: calcMethod) else {
+            guard let result = calculatorLogic.calculate(symbol: calcMethod) else {
                 fatalError("Cannot get the result of operation")
             }
             displayValue = result
