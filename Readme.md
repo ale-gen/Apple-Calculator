@@ -6,4 +6,4 @@ I used MVC design pattern, and for UI - storyboard.
 
 * View of calculator: 
 
-![View] (Images/View.png)
+![View](Images/View.png)
